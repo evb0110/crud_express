@@ -16,7 +16,7 @@ const read = () => new Promise((res, rej) => {
 })
 
 const write = (objects) => new Promise ((res, rej) => {
-  fs.writeFile(db, JSON.stringify(objects), (err) => {
+  fs.writeFile(db, JSON.stringify(objects, null, 2), (err) => {
     if (err) return console.warn(err)
     res('ok')
   })
@@ -36,7 +36,7 @@ app.post('/', (req, res) => {
   const obj = req.body
   const id = Math.random().toString().slice(2, 12)
   const newObj = {...obj, id}
-  read().then(objects => [...objects, newObj])
+  read().then(objects => [newObj, ...objects])
         .then(write)
         .then(() => res.send(newObj))
 })
@@ -57,6 +57,6 @@ app.delete('/:id', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(port, '127.0.0.1', () => {
   console.log(`Server is up on port ${port}`)
 })
