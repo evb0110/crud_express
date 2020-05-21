@@ -4,12 +4,12 @@ app.use(express.json())
 
 const fs = require('fs')
 const port = 3000
-const db = './db'
+const db = './db.json'
 
 const read = () => new Promise((res, rej) => {
   fs.readFile(db, (err, data) => {
     if (err) return console.warn(err)
-    res(JSON.parse(data))
+    res(JSON.parse(data.toString()))
   })
 })
 
