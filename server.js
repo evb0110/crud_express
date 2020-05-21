@@ -1,6 +1,8 @@
 const express = require('express')
+const cors = require('cors')
 let app = express()
 app.use(express.json())
+app.use(cors())
 
 const fs = require('fs')
 const port = 3000
