@@ -3,17 +3,9 @@ let app = express()
 app.use(express.json())
 
 const fs = require('fs')
-
 const port = 3000
-
 const db = './db'
 
-const write = (objects) => new Promise ((res, rej) => {
-  fs.writeFile(db, JSON.stringify(objects), (err) => {
-    if (err) return console.warn(err)
-    res('ok')
-  })
-}) 
 const read = () => new Promise((res, rej) => {
   fs.readFile(db, (err, data) => {
     if (err) return console.warn(err)
@@ -21,6 +13,12 @@ const read = () => new Promise((res, rej) => {
   })
 })
 
+const write = (objects) => new Promise ((res, rej) => {
+  fs.writeFile(db, JSON.stringify(objects), (err) => {
+    if (err) return console.warn(err)
+    res('ok')
+  })
+})
 
 app.get('/', (req, res) => {
   read().then(d => res.send(d))
