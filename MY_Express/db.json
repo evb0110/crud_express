@@ -1,0 +1,57 @@
+[
+  {
+    "active": true,
+    "name": "выафа",
+    "rule_type": "filter",
+    "filters": {
+      "camera_groups": [
+        2
+      ],
+      "cameras": [
+        5
+      ],
+      "f_gender_class": "male",
+      "f_medmask_class": "none"
+    },
+    "id": "3128193141"
+  },
+  {
+    "id": "8497266027",
+    "active": true,
+    "name": "qewqwe",
+    "rule_type": "counter",
+    "filters": {
+      "cameras": [
+        5
+      ],
+      "interval": 61,
+      "silhouettes_from": 6,
+      "summarize": true
+    }
+  },
+  {
+    "active": true,
+    "name": "adfdaf",
+    "rule_type": "filter",
+    "filters": {},
+    "id": "0636436244"
+  },
+  {
+    "active": true,
+    "name": "adfdasf",
+    "rule_type": "filter",
+    "filters": {},
+    "id": "6899941694"
+  },
+  {
+    "active": true,
+    "name": "asdf",
+    "rule_type": "filter",
+    "filters": {
+      "matched_lists": [
+        -1
+      ]
+    },
+    "id": "1034221697"
+  }
+]
